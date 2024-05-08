@@ -28,20 +28,20 @@ const Stopwatch = () => {
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
-    return `${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
   return (
     <div style={{margin:"10px"}}>
-      <h1>StopWatch</h1>
-      <h2>Time: {formatTime(time)}</h2>
+      <h1>Stopwatch</h1>
+      <p>Time: {formatTime(time)}</p>
       <div>
         {!isRunning ? (
-          <button onClick={startStopWatch} style={{marginRight:"10px"}}>Start</button>
+          <button onClick={startStopWatch} style={{marginRight:"10px"}} name="Start">Start</button>
         ) : (
-          <button onClick={startStopWatch} style={{marginRight:"10px"}}>Stop</button>
+          <button onClick={startStopWatch} style={{marginRight:"10px"}} name="Stop">Stop</button>
         )}
-        <button onClick={resetStopwatch}>Reset</button>
+        <button onClick={resetStopwatch} name="Reset">Reset</button>
       </div>
     </div>
   );
